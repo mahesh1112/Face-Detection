@@ -12,3 +12,22 @@ cv.rectangle(img, (d,a), (b,c), (0,255,0), thickness = 2)
 
 cv.imshow("window_name", img)
 cv.waitKey(0)
+
+
+#for real time 
+
+cam = cv.VideoCapture(0)
+
+while True:
+  isTrue, frame = cam.read()
+  face_coordinates = face_recognition.face_locations(frame)
+  for a,b,c,d in face_coordinates:
+    cv.rectangle(frame, (d,a),(b,c),(0,255,0), 3)
+    cv.imshow("window_name", frame)
+  cv.waitKey(0)
+  
+  if 0xff == 27:
+    break
+ 
+cam.release()
+cv.destroyAllWindows()
