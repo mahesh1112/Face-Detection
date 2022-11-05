@@ -4,7 +4,7 @@ import face_recognition
 
 #for images
 
-img = cv.imread("rdj.jpg")
+img = cv.imread("./rdj.jpg")
 face_coordinates = face_recognization.face_locations[0]
 (a,b,c,d) = face_coordinates
 
